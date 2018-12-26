@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Oct 17 01:52:06 2018
-
-@author: AvantikaDG
-"""
-
 import sys
 move = -1
 n = 0
