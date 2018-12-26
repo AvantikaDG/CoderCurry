@@ -62,18 +62,14 @@ def minimax(board, turn, depth):
     nodes += 1
     for square, pos in enumerate(board):
         if pos == 0:
-            
-            #print(board)
             new_board = board.copy()
             new_board[square] = turn
             moves.append(square)
-            #print("Moves:", moves, "depth:", depth, "turn:", turn, checkNonTerminal(new_board) == 0)
+            
             if evaluateBoard(new_board) in [1, -1] or checkNonTerminal(new_board) == 0:
                 move = square
                 return getScore(new_board, depth)
             scores.append(minimax(new_board, turn * -1, depth + 1))
-#    print("moves",moves)
-#    print("scores", scores) 
     
     if turn == 1:
         move = moves[scores.index(max(scores))]
